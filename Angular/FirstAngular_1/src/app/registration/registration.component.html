@@ -1,0 +1,7 @@
+ <br><b> Hello Mr/Ms {{firstName}} &nbsp;{{lastName}}</b><br><br>  <!--One way binding Model to view-->
+    First Name<input type="text" value={{firstName}}
+    [(ngModel)]="firstName" /><br><br> <!-- ngModel binds between view and model-->
+    Last Name<input type="text" value={{lastName}}
+    [(ngModel)]="lastName"/><br><br>
+    <input type="submit" value="Save" />
+<p>registration works!</p>

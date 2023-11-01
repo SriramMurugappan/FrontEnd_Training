@@ -1,0 +1,35 @@
+<b>we can be contacted on .....</b><br>
+<b>Our Address
+11, Rajiv Gandhi IT Expy, Sholinganallur, Chennai, Tamil Nadu 600119</b><br>
+<b>You can reachout office on  044 6669 4287</b><br>
+ <form #contactData="ngForm" (ngSubmit)='addContact(contactData)' >
+    UserID <input type="text" name="id" ngModel/><br><br>
+    First Name <input type="text" name="firstName" ngModel/><br><br>
+    Last Name <input type="text" name="lastName" ngModel/><br><br>
+    Email-id <input type="email" name="emailid" ngModel/><br><br>
+    Phone Number <input type="number" name="phoneNo" ngModel/><br><br>
+    Address <input type="text" name="address" ngModel/><br><br>
+    <input type="submit" value="Add User" (click)="addContact(contactData)"/>&nbsp;&nbsp;
+    <input type="button" value="Get User" (click)=" getAllContacts()"/>&nbsp;&nbsp;
+    <input type="button" value="Modify User" (click)="updateContact(contactData)" ngModel/>&nbsp;&nbsp;
+    <input type="button" value=" Delete User" (click)="deleteContact(contactData)" ngModel/><br><br> 
+    <table border="6">
+        <tr>
+          <th>UserID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email-id</th>
+          <th>Phone No</th>
+          <th>Address</th>
+        </tr>
+        <tr *ngFor = "let user of contactList" >
+          <td>{{user.id}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.emailid}}</td>
+          <td>{{user.phoneNo}}</td>
+          <td>{{user.address}}</td>
+        </tr>
+      </table>
+
+</form>

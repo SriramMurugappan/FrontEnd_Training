@@ -1,0 +1,29 @@
+<html>
+    <script>
+        function product(num1,num2){
+            document.writeln("Product of numbers: " + (num1*num2));
+        }
+        function sum(num1,num2){
+            document.writeln("Sum of numbers: " + (num1+num2));
+        }
+        function SumProduct(p,s,n1,n2){
+            /*
+                p(num1,num2){
+                    document.writeln("Product of numbers" + (num1*num2));")
+                }
+                s(num1,num2){
+                    document.writeln("Sum of numbers: " + (num1+num2));
+                }
+            */
+            p(n1,n2);
+            s(n1,n2);
+        }
+        SumProduct(product,sum,100,200); //normal function call
+        /*
+            SumProduct(product(100,200){...},sum(100,200){...})
+        */
+    </script>
+    <body>
+        
+    </body>
+</html>

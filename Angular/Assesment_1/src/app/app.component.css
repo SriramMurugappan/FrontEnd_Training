@@ -1,0 +1,30 @@
+.coral{
+    background-color: coral;
+    width:700px; height: 400px;
+    font-family: 'Times New Roman';
+    color: black;
+    text-align: center;
+}
+.orchid{
+    background-color: orchid;
+    width: 700px;height: 400px;
+    font-family: 'Times New Roman';
+    color:beige;
+    text-align: center;
+
+
+}
+.arctic{
+    background-color: skyblue;
+    width: 700px;height: 400px;
+    font-family: 'Helvetica';
+    color: orangered;
+    text-align: center;
+}
+.fern{
+    background-color: greenyellow;
+    width: 700px;height: 400px;
+    font-family: 'Helvetica';
+    color: black;
+    text-align: center;
+}

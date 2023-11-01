@@ -1,0 +1,36 @@
+<style>
+    div > u{
+        color: pink; /* This style is applicable only for underline tag under div */
+    }
+    div :nth-child(){
+        background-color: rgb(90,178,100);
+    }
+    div > div > p{
+        background-color: rgb(200, 25, 25); 
+    }
+    div.outer > :first-child
+    {
+        border-style: groove; border-width: 5px;border-color: violet;
+    } 
+    
+</style>
+<body>
+    <u>Underline 0</u><br><br>
+    <div class="outer">
+        <b>This is div</b><br><br>
+        <i>Italics</i><br>
+        <i> Italics 3</i><br>
+        <u>Underline</u><br>
+        <u>underline2</u><br>
+        <div>
+            <p>
+                <b>In Bold</b><br>
+                <h1>Header 1</h1>
+            </p>
+        </div>
+        
+        <h2>Header 2</h2>
+    </div>
+    <i>Italics 2</i>
+    <h1>Header 2</h1>
+</body>

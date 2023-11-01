@@ -1,0 +1,6 @@
+.temp{
+    align-items: center;
+}
+input:focus {
+    outline-color: aqua;
+}

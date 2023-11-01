@@ -1,0 +1,39 @@
+<html>
+    <body>
+        <div id="d1" style="color: black"> 
+        </div>
+    </body>
+<script>
+    var age = prompt("Enter your age",18);
+    try
+    {
+        if(age < 18)
+        {
+            throw "You are a Child/Teenager"
+        }
+        else if (age >60)
+        {
+            throw "Rest in peace";
+        }
+        else
+        {
+            document.writeln("You can apply for the job...");
+        }
+    }
+    catch(e)
+    {
+        var divTag = document.getElementById("d1");
+        divTag.innerHTML=e;
+    }
+    finally
+    {
+        document.writeln("<br><b>Now register for email</b>");
+        window.open("https://mail.yahoo.com");
+        /* By adding "_self" the link will open in the same page.
+           By not adding "_self" the link will open in next tab. 
+        */
+
+    }
+</script>
+
+</html>

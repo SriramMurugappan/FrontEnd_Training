@@ -1,0 +1,5 @@
+.rotateText {
+    transform: rotate(-90deg);
+    -webkit-margin-collapse: collapse;
+    /* Add more styling as needed */
+  }

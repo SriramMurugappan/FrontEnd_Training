@@ -1,0 +1,91 @@
+<center>
+<h1>USER INFORMATION</h1>
+<script>
+    function checkFirstName(){
+        var fname = document.forms[0].firstName.value;
+        if(fname == ""){
+            // window.alert("First Name is Mandatory");
+            // document.forms[0].fname.focus(); //Makes the firstName field active
+            var nError=document.getElementById("nameError");
+            nError.style.fontWeight="bold";
+            nError.style.fontStyle="Italic";
+            nError.innerHTML="First Name is Mandatory";
+
+        }
+    }
+
+    function checkAge()
+    {
+        var empage = document.forms[0].empAge.value;
+        if(empage == ""){
+            // window.alert("Age is mandatory");
+            // document.forms[0].empage.focus();
+            var aError=document.getElementById("ageError");
+            aError.style.fontWeight="bold";
+            aError.style.fontStyle="Italic";
+            aError.innerHTML="Age is Mandatory";
+        }
+
+    }
+
+    function clearError(){
+        document.getElementById("nameError").innerHTML="";
+    }
+
+    function clearAgeError(){
+        document.getElementById("ageError").innerHTML="";
+    }
+
+    function confirmReset(){
+        var status = confirm("Want to reset and lose the data ? ");
+        console.log(status);
+        return status;
+    }
+
+    function enableSave(){
+        var v = document.getElementsByName("saveStatus");
+        var CheckState = v[0].checked;
+        document.getElementById("save").disabled =! CheckState;
+    }
+</script>
+<form action="#" novalidate onreset=" return confirmReset()"> 
+    <label>EmployeeID</label><input type="text" name="EmployeeID"
+        value="100" readonly/><br><br>
+    <label for="fname" >First Name</label><input type="text" 
+    name="firstName" placeholder="Enter Your name" required 
+    maxlength="30" minlength="5" onblur="checkFirstName()" 
+    onfocus="clearError()" />
+    <label id="nameError" style="color: black;"></label>
+    <br><br> <!--onblur is the calling function and checkFirstName is the action to be performed-->
+
+    <label>Age</label><input type="number" min="18" max="60"
+    name="empAge" size="5" onblur="checkAge()"
+    onfocus="clearAgeError()"/>
+    <label id="ageError" style="color: black;"></label>
+    <br><br>
+
+    <label>Preffered Volume</label><input type="range" min="10"
+    max="100" style="width:200;" onchange="updateVolume()" name="Volume" />
+    <input type="text" name="volLevel" style="width:60px;height: 15px"
+    readonly /><br><br>
+    <label>Date of Joining</label><input type="date" 
+    name="JoinDate" min="1997-10-01" max="2023-09-26"/><br><br>
+    <label>Project Join date</label><input type="date"
+    name="ProjectJoin" min="" /><br><br>
+    <label>Upload your resume</label><input type="file"
+    name="resume" accept="application/pdf, Audio/mp3" /><br><br>
+    
+    <label>Your email</label><input type="email" name="emailID" minlength="6" /><br><br>
+
+    <input type="checkbox" name="saveStatus" onclick="enableSave()" /> Agree to Terms and conditions <br><br>
+    <input type="submit" value="Save" id="save" disabled /> &nbsp;&nbsp; <input type="reset" value="reset" />
+</form>
+<script>
+    function updateVolume()
+    {
+        document.forms[0].volLevel.value=
+        document.forms[0].Volume.value + "%";
+    }
+</script>
+<body ></body>
+</center>

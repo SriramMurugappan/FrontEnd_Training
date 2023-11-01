@@ -1,0 +1,29 @@
+<center>
+<h1>USER INFORMATION</h1>
+<form action="#"> 
+    <label>EmployeeID</label><input type="text" name="EmployeeID"
+        value="100" readonly/><br><br>
+
+    <label for="fname" >First Name</label><input type="text" 
+    name="firstName" placeholder="Enter Your name" required 
+    maxlength="30" minlength="5" /><br><br>
+
+    <label>Age</label><input type="number" min="18" max="60"
+    name="empAge" size="5"/><br><br>
+
+    <input type="button" onclick="saveData()" value="Save" />&nbsp;&nbsp;<input type="reset"
+    value="reset" />
+</form>
+<script>
+    function saveData()
+    {
+        var v=document.forms[0].EmployeeID.value;
+        var a=document.forms[0].firstName.value;
+        var b=document.forms[0].empAge.value;
+        console.log(v + "\t\t" + a + "\t\t" +b);
+        sessionStorage.EmployeeID=v;
+        sessionStorage.firstName=a;
+        sessionStorage.empAge=b;
+    }
+</script>
+</center>

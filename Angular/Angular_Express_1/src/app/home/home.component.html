@@ -1,0 +1,23 @@
+<br>
+<b>Enter User's data</b><br><br>
+<form #userData="ngForm" (ngSubmit)='addUser(userData)'>  <!-- userData is the field Angular has to create-->
+  User ID <input type="text" name="uid" ngModel /><br><br>
+  Password <input type="text" name="password" ngModel /><br><br>
+  Email-id <input type="email" name="emailid" ngModel /> <br><br>
+  <input type="submit" value="Add User" [disabled]/>&nbsp;&nbsp;
+  <input type="button" value="Get User" (click)=" getAllUsers()"/><br><br>
+</form>
+<!-- <br><label >{{this.expresponse.substring(3,this.expresponse.length-4)}}</label><br> -->
+<table border="6">
+  <tr>
+    <th>User ID</th>
+    <th>Password</th>
+    <th>Email-id</th>
+  </tr>
+  <tr *ngFor = "let user of userList" >
+    <td>{{user.userid}}</td>
+    <td>{{user.password}}</td>
+    <td>{{user.emailid}}</td>
+  </tr>
+</table>
+

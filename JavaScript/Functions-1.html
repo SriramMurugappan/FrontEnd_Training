@@ -1,0 +1,35 @@
+<html>
+<body>
+    
+</body>
+    <script> 
+        //static functions
+        function test(num1, num2){ //definition of function
+            document.writeln(Math.sqrt(num1) + "<br>");
+            document.writeln(Math.sqrt(num2) + "<br>");            
+        }
+        test(100,200);//function call
+        test(1000,2000);
+        //dynamic functions
+        var validate= function (age){
+            if(age <=18 || age >=60)
+                document.writeln("<b>Not eligible for job...</b><br>");
+            else
+                document.writeln("<b> Eligible for Job ...</b><br>");
+        }
+        validate(22);
+
+        //dynamic functions
+        var sum=new Function
+        ("num1,num2","return num1+num2");
+        /*
+            function calc(num1,num2){
+                document.writeln(num1 * num2 <br>);  
+                document.writeln(num1 + num2 <br>);
+
+            }
+        */ 
+       var res=sum(100,200);
+       document.writeln("Result of sum is: ",res);
+    </script>
+</html>

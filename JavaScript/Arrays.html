@@ -1,0 +1,27 @@
+<html>
+    
+    <body>
+    <script>
+        cities=["Chennai","Banglore","Hyderabad","Mumbai","Ranchi","Patna","Pune"];
+        document.writeln(cities.length + "<br>");
+        document.writeln(cities);
+
+        for(i in cities){
+            document.writeln(cities[i]+"<br>");
+        }
+        document.writeln("<br>I of<br>");
+        for(i of cities){
+            document.writeln(i + "<BR>");
+        }
+        cities[9]="Chandigarh";
+        cities[11]="New Delhi";
+        document.writeln("Cities:" + cities + "<br>");
+        cities.sort();
+        document.writeln("Sorted Cities :" + cities + "<br>");
+        cities.reverse();
+        document.writeln("Reversed cities :" + cities);
+
+    </script>
+        
+    </body>
+</html>

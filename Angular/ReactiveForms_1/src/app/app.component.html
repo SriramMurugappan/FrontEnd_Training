@@ -1,0 +1,31 @@
+<!-- Reactive forms makes use of a built-in class called Form Group. 
+A FormGroup is a collection of form elements. ngModel is not used.
+-->
+<b>Enter User's data</b><br>
+ <form [formGroup]="userForm" (ngSubmit)='addUser()'>  <!-- userData is the field Angular has to create-->
+  First Name <input type="text" name="firstName" formControlName="firstName" /><br>
+  Last Name <input type="text" name="lastName" formControlName="lastName"/><br>
+  Join Date <input type="date" name="joinDate" min="1997-01-03" max="2023-10-20" formControlName="joinDate"/><br>
+  Salary <input type="number" name="salary" formControlName="salary" /><br>
+  <input type="submit" value="Add User" [disabled]="!this.userForm.valid"/>
+  <!-- valid is a built-in property of form. If all the validations has passes,
+  then valid will be true else false-->
+</form>
+<table border="6">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Join Date</th>
+    <th>Salary</th>
+  </tr>
+  <tr *ngFor = "let user of userList;let i=index">
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td>{{user.joinDate}}</td>
+    <td>{{user.salary}}</td>
+    <!-- <td><input type="button" value="Edit" (click)="editUser(i)"/></td> -->
+    <td><input type="button" value="Delete" (click)="deleteUser(i)"/></td>
+  </tr>
+</table>
+
+<router-outlet></router-outlet>

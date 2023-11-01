@@ -1,0 +1,46 @@
+<html>
+<body background="webBg(2).jpg" text="white">
+<center>
+    <h1>USER INFORMATION</h1>
+    <form background="webBg2.jpg" > 
+        
+        <label for="firstName" >First Name</label>&nbsp;&nbsp;<input type="text" 
+        name="firstName" placeholder="Enter Your first name" required 
+        maxlength="30" minlength="5" /><br><br>
+
+        <label for="lastName" >Last Name</label>&nbsp;&nbsp;<input type="text" 
+        name="lastName" placeholder="Enter Your last name" required 
+        maxlength="30" minlength="1" /><br><br>
+    
+        <label for="Address"> Address </label>&nbsp;&nbsp;<input type="text" 
+        name="Address" placeholder="Enter Your Address" required 
+        maxlength="30" minlength="5" /><br><br>
+
+        <label for="mobileNumber">Mobile Number</label> <input type="number" 
+        name="mobileNumber" /><br><br>
+            
+        <label>Your Email-id</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="emailID" minlength="6" /><br><br>
+    
+        <input type="button" value="get" />&nbsp;&nbsp;<input type="button" onclick="addData()" value="Add" />&nbsp;&nbsp;
+        <input type="reset" value="Reset" />
+        
+    </form>
+    <script>
+        function addData()
+        {
+            var a=document.forms[0].firstName.value;
+            var b=document.forms[0].lastName.value;
+            var c=document.forms[0].Address.value;
+            var d=document.forms[0].mobileNumber.value;
+            var e=document.forms[0].emailID.value;
+            console.log(a + "\t" + b + "\t" + c + "\t" + d + "\t" + e);
+            localStorage.firstName=a;
+            localStorage.lastName=b;
+            localStorage.Address=c;
+            localStorage.mobileNumber=d;
+            localStorage.emailID=e;
+        }
+    </script>
+    </center>
+</body>
+</html>

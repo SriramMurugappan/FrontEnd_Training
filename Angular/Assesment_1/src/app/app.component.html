@@ -1,0 +1,47 @@
+<b>Select your Favourite Theme</b>
+<select size="1" [(ngModel)]="favTheme">
+  <option value="coral">Coral Theme</option>
+  <option value="orchid">Orchid Theme</option>
+  <option value="arctic">Arctic Theme</option>
+  <option value="fern">Neon Theme</option>  
+</select><br><br>
+<div [class]="favTheme">
+  <b>User Details</b><br><br>
+  First Name <input type="text" [(ngModel)]="firstName" /><br><br>
+  Last Name <input type="text" [(ngModel)]="lastName"  /><br><br>
+  <label>States:</label><select size="1" [(ngModel)]="stateName">
+    <option value="TN">TamilNadu</option>
+    <option value="AP">Andhra</option>
+    <option value="KA">Karnataka</option> 
+    <option value="KL">Kerala</option>
+    <option value="NoOption">No Option </option>
+  </select><br>
+  <div [ngSwitch]="this.stateName">
+  <ul *ngSwitchCase="'TN'">
+    <li>Chennai</li>
+    <li>Coimbatore</li>
+    <li>Madurai</li>
+  </ul>
+  <ul *ngSwitchCase="'AP'">
+    <li>Vijayawada</li>
+    <li>Vishakapattinam</li>
+    <li>Warangal</li>
+  </ul>
+  <ul *ngSwitchCase="'KA'">
+    <li>Banglore</li>
+    <li>Mysore</li>
+    <li>Manglore</li>
+  </ul>
+  <ul *ngSwitchCase="'KL'">
+    <li>Thiruvananthapuram</li>
+    <li>Ernakulam</li>
+    <li>Cochin</li>
+  </ul>
+</div>
+
+  <input type="submit"  value="Save" [disabled]="!(firstName.length > 0 && lastName.length > 0 && stateName != 'NoOption')"/>
+
+
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,25 @@
+
+<h4>First Name</h4>
+First Name: {{this.udata.firstName | uppercase}} <br>
+Last Name: {{this.udata.lastName | uppercase}}<br> 
+{{this.udata.firstName + ' ' + this.udata.lastName}}<br>
+First Name: {{this.udata.firstName | lowercase}} <br>
+Last Name: {{this.udata.lastName | lowercase}} <br> 
+Sliced Full Name &nbsp;:{{this.udata.firstName + ' '+this.udata.lastName 
+  | slice:4:15}}<br>
+<h4>Date and Time</h4>
+Join Date &nbsp; {{this.udata.dateofJoining | date}} <br>
+Join Date &nbsp; {{this.udata.dateofJoining | date:'fullDate'}}<br>
+Join Date &nbsp; {{this.udata.dateofJoining | date:'shortDate'}}<br><br>
+Full Time: &nbsp; {{this.udata.dateofJoining | date:'fullTime'}}<br>
+Short Time &nbsp;: {{this.udata.dateofJoining | date: 'dd-mm-yyyy'}}<br> 
+DateFormat &nbsp; {{this.udata.dateofJoining | date: 'medium' }}<br>
+Full Date Format &nbsp; {{this.udata.dateofJoining | date:'dd-M-yyyy'}}<br>
+Time Format &nbsp;{{this.udata.dateofJoining |  date:'h:m:ss a z'}}<br>
+<h4>Currency</h4>
+Currency &nbsp; {{this.udata.salary | currency}}<br>
+INR Currency &nbsp; {{this.udata.salary | currency:'INR'}}<br>
+GBP Currency &nbsp; {{this.udata.salary | currency:'GBP'}}<br>
+Euro Currency &nbsp; {{this.udata.salary | currency:'EUR'}}<br>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,29 @@
+<!-- Any Template driven form must use ngForm attribute(directive) 
+The corresponding model is automatically created by angular
+
+userData becomes the object that acts as a model. userData is automatically 
+created by angular. It will have fields like firstName,lastName,
+joinDate and Salary. -->
+<b>Enter User's data</b><br>
+ <form #userData="ngForm" (ngSubmit)='addUser(userData)'>  <!-- userData is the field Angular has to create-->
+  First Name <input type="text" name="firstName" ngModel /><br>
+  Last Name <input type="text" name="lastName" ngModel /><br>
+  Join Date <input type="date" name="joinDate" ngModel /> <br>
+  Salary <input type="number" name="salary" ngModel /><br>
+  <input type="submit" value="Add User" [disabled]/>
+</form>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Join Date</th>
+    <th>Salary</th>
+  </tr>
+  <tr *ngFor = "let user of userList">
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td>{{user.joinDate}}</td>
+    <td>{{user.salary}}</td>
+  </tr>
+</table>
+<router-outlet></router-outlet>
